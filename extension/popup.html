@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sable AirPlay</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">AirPlay</p>
+        <h1 id="page-title">Cast this tab</h1>
+      </div>
+    </header>
+    <label class="apple">
+      Apple TV
+      <input id="apple-ip" placeholder="192.168.1.20" spellcheck="false" />
+      <button id="apple-test" type="button">Find</button>
+    </label>
+    <p id="status">Videos on this page can be sent to an Apple TV on the same Wi-Fi.</p>
+    <div class="transport" id="transport" hidden>
+      <button id="atv-pause" type="button">Pause</button>
+      <button id="atv-play" type="button">Play</button>
+      <button id="atv-stop" type="button">Stop</button>
+    </div>
+    <h2>Send to Apple TV</h2>
+    <ul id="list"></ul>
+    <template id="row">
+      <li>
+        <button type="button" class="atv">
+          <strong></strong>
+          <span></span>
+        </button>
+      </li>
+    </template>
+  </body>
+  <script src="popup.js"></script>
+</html>

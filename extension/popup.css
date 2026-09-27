@@ -1,0 +1,64 @@
+:root {
+  color-scheme: dark;
+  --ink: #100e0c;
+  --panel: #1c1916;
+  --line: #3a3228;
+  --brass: #e4c27a;
+  --paper: #f4efe6;
+  --mute: #a3988c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  width: 360px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 13px/1.4 "Segoe UI", sans-serif;
+}
+header, .actions, h2, #status, #list { padding-left: 14px; padding-right: 14px; }
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+}
+.eyebrow { margin: 0; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass); font-size: 10px; }
+h1 { margin: 2px 0 0; font: 600 15px/1.2 Georgia, serif; max-width: 210px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.room { display: flex; align-items: center; gap: 6px; color: var(--mute); font-size: 11px; }
+.room input {
+  width: 78px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--paper);
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-family: ui-monospace, monospace;
+  letter-spacing: 0.12em;
+}
+#status { color: var(--mute); min-height: 2.4em; }
+.actions { display: flex; flex-wrap: wrap; gap: 6px; }
+button {
+  border: 0;
+  border-radius: 999px;
+  background: #2a2622;
+  color: var(--paper);
+  padding: 7px 10px;
+  cursor: pointer;
+}
+button.primary, #receiver { background: var(--brass); color: #1a140c; font-weight: 650; }
+h2 { margin: 14px 0 6px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); }
+#list { list-style: none; margin: 0; padding-bottom: 14px; display: flex; flex-direction: column; gap: 6px; max-height: 320px; overflow: auto; }
+.apple { display: flex; align-items: center; gap: 6px; padding: 0 14px 8px; color: var(--mute); font-size: 11px; }
+.apple input { flex: 1; min-width: 0; border: 1px solid var(--line); background: var(--panel); color: var(--paper); border-radius: 999px; padding: 6px 10px; }
+.transport { display: flex; gap: 6px; padding: 0 14px 8px; }
+#list li { display: block; }
+#list button.atv { width: 100%; text-align: left; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); color: var(--paper); font-weight: 500; }
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+#list strong, #list span { display: block; }
+#list span { color: var(--mute); font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 310px; }
+.empty { color: var(--mute); }

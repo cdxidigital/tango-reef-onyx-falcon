@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    background: #100e0c;
+    color: #f4efe6;
+    min-height: 100%;
+  }
+
+  body {
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    margin: 0;
+  }
+}
+
+@theme {
+  --color-ink: #100e0c;
+  --color-panel: #1a1714;
+  --color-line: #3a3228;
+  --color-brass: #e4c27a;
+  --color-brass-dim: #a68445;
+  --color-paper: #f4efe6;
+  --color-mute: #a3988c;
+}

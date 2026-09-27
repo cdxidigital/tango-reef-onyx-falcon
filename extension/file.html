@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sable local file</title>
+    <link rel="stylesheet" href="stage.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="mark">Local file</p>
+        <h1 id="name">Choose a video or audio file</h1>
+      </div>
+    </header>
+    <video id="player" controls playsinline></video>
+    <main>
+      <input id="pick" type="file" accept="video/*,audio/*,.vtt" />
+      <p class="hint">Files stay on this computer. They play in this window, which you can fullscreen onto a TV or second monitor. WebVTT files attach as subtitles.</p>
+    </main>
+    <script src="file.js"></script>
+  </body>
+</html>
