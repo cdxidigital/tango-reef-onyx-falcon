@@ -1,5 +1,5 @@
 import { type ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { SAMPLES, channelName, roomCode, type CastItem } from "@/lib/sable/samples";
+import { channelName, roomCode, type CastItem } from "@/lib/sable/samples";
 import { Stage, formatTime, type StageHandle } from "./Stage";
 
 type Wire =
@@ -9,8 +9,8 @@ type Wire =
 
 export function Studio() {
   const [room, setRoom] = useState("SABLE1");
-  const [queue, setQueue] = useState<CastItem[]>(SAMPLES);
-  const [currentId, setCurrentId] = useState<string>(SAMPLES[0]?.id ?? "");
+  const [queue, setQueue] = useState<CastItem[]>([]);
+  const [currentId, setCurrentId] = useState("");
   const [pasted, setPasted] = useState("");
   const [volume, setVolume] = useState(0.9);
   const [rate, setRate] = useState(1);
@@ -210,8 +210,8 @@ export function Studio() {
     <div className="min-h-screen bg-[var(--color-ink)] text-[var(--color-paper)]">
       <header className="flex flex-wrap items-end justify-between gap-4 border-b border-[var(--color-line)] px-5 py-4 md:px-8">
         <div>
-          <p className="text-[11px] tracking-[0.28em] text-[var(--color-brass)] uppercase">Chrome · Edge</p>
-          <h1 className="font-serif text-4xl leading-none tracking-tight">Sable Cast</h1>
+          <p className="text-[11px] font-semibold tracking-[0.18em] text-[var(--color-brass)] uppercase">AirPlay from the browser</p>
+          <h1 className="text-4xl font-semibold tracking-tight">Sable</h1>
         </div>
         <div className="flex flex-wrap items-center gap-2 text-sm">
           <label className="flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-[var(--color-panel)] px-3 py-1.5">

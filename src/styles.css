@@ -8,23 +8,23 @@
 
   html,
   body {
-    background: #100e0c;
-    color: #f4efe6;
+    background: #07080c;
+    color: #f4f6fb;
     min-height: 100%;
   }
 
   body {
-    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-family: "Segoe UI", Inter, "Helvetica Neue", sans-serif;
     margin: 0;
   }
 }
 
 @theme {
-  --color-ink: #100e0c;
-  --color-panel: #1a1714;
-  --color-line: #3a3228;
-  --color-brass: #e4c27a;
-  --color-brass-dim: #a68445;
-  --color-paper: #f4efe6;
-  --color-mute: #a3988c;
+  --color-ink: #07080c;
+  --color-panel: #12141c;
+  --color-line: #262a36;
+  --color-brass: #d7ff4a;
+  --color-brass-dim: #9bb82e;
+  --color-paper: #f4f6fb;
+  --color-mute: #8d93a6;
 }

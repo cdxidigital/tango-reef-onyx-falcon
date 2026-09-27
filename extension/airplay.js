@@ -19,7 +19,8 @@ async function airplayRequest(host, path, { method = "POST", body, contentType }
   const response = await fetch(`http://${host}:${AIRPLAY_PORT}${path}`, {
     method,
     headers: {
-      "User-Agent": "MediaControl/1.0",
+      "User-Agent": "AirPlay/320.20",
+      "X-Apple-Device-ID": "0x0a0b0c0d0e0f",
       "X-Apple-Session-ID": sessionId(),
       ...(contentType ? { "Content-Type": contentType } : {}),
     },
@@ -42,8 +43,15 @@ async function airplayProbe(host) {
     }
     const name = info.text.match(/<key>deviceid<\/key>\s*<string>([^<]+)/i)?.[1] || target;
     return { ok: true, host: target, name };
-  } catch {
-    return { ok: false, error: `Cannot reach ${target}:7000. Same Wi-Fi as the Apple TV, and AirPlay allowed for everyone.` };
+  } catch (error) {
+    const reason = String(error && error.message ? error.message : error);
+    const refused = /refused|ECONNREFUSED|network/i.test(reason);
+    return {
+      ok: false,
+      error: refused
+        ? `Nothing is listening at ${target}:7000. That address is not the Apple TV, or AirPlay is off. On the TV open Settings → Network and copy the IP shown there, not the router.`
+        : `Cannot reach ${target}:7000 (${reason}). Phone and TV must be on the same Wi-Fi, and AirPlay set to Everyone.`,
+    };
   }
 }
 

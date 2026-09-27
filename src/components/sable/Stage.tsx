@@ -113,7 +113,7 @@ export function Stage({ url, title, loop, rate, volume, posterNote, onTime, bind
   }, [bind]);
 
   return (
-    <div className="relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-2xl border border-[var(--color-line)] bg-black">
+    <div className="relative flex h-full min-h-[280px] flex-col overflow-hidden rounded-[28px] border border-white/10 bg-black shadow-[0_30px_80px_rgba(0,0,0,.45)]">
       <video
         ref={videoRef}
         className="h-full w-full flex-1 bg-black object-contain"
@@ -123,7 +123,7 @@ export function Stage({ url, title, loop, rate, volume, posterNote, onTime, bind
       />
       {!url && (
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2 text-center">
-          <p className="font-serif text-2xl text-[var(--color-brass)]">Receiver idle</p>
+          <p className="text-2xl font-semibold tracking-tight text-[var(--color-brass)]">Ready when you are</p>
           <p className="max-w-xs text-sm text-[var(--color-mute)]">
             {posterNote ?? "Pick a stream, drop a file, or mirror this screen."}
           </p>
